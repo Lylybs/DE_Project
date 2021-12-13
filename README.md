@@ -14,6 +14,8 @@ We had to create an application that can analyse a sentence and return if the se
 
 It is divided in 4 branches : the main branch, the branch with the code for the website, the branch with the code for the sentiment analysis and finally a branch for the testes.
 
+The folder named "Website" contains the main files of the project.
+
 ## Task Management
 We used Trello for the project management. We define three list : to do, in progress, done.
 
