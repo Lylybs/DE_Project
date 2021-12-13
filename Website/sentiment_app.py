@@ -12,30 +12,31 @@ nltk.download('punkt')
 nltk.download('wordnet')
 nltk.download('stopwords')
 
-
-
 app = Flask(__name__)
 
 @app.route('/')
 def my_form():
     return render_template('Website.html')
 
-
+# Here we collect the sentence entered by the user on the web interface
 def input_sent():
     input = request.form['sentence']
     return input
 
+#tokenize sentences : split input sentence into words
 def sent_tokenized(input):
     data_clean_sent_tokenized = sent_tokenize(input)
     data_clean_word_sent_tokenized = [word_tokenize(sentence) for sentence in data_clean_sent_tokenized]
     return data_clean_word_sent_tokenized
 
+#lower text
 def lower_sent(token):
     stc_token_lower=[]
     for i in range(len(token)):
         stc_token_lower.append([word.lower() for word in token[i]])
     return stc_token_lower
 
+#Lemmatize : etablish relationships between words and remove stopwords
 def lemmatize(lower_sent):
     stopWords = stopwords.words('english')
     word_lemmatizer = WordNetLemmatizer()
@@ -47,6 +48,8 @@ def lemmatize(lower_sent):
     final_input = ' '.join(final_sent)
     return final_input
 
+#We use Vader library to analyse the sentiment of the text
+#the compound is the positive metrics
 def analysis(lemmatize_token):
     analyser = SentimentIntensityAnalyzer()
     score = analyser.polarity_scores(lemmatize_token)
