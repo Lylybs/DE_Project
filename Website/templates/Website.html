@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Léna BERNADINE and Lydia BOUMRICHE</title>
+    </head>
+    <body>
+        <body bgcolor="#ddfbff"></body>
+        <center>
+        <h1><FONT color="#5287f9" face= "Impact" size="13pt">Sentiment analysis application</FONT></h1>
+        <p><FONT size="7pt" color="#6d95eb"><i>This sentiment analysis application allows the user to submit a piece of texte, in order to know if the text is generally positive, negative or neutral.</i></FONT></p>
+        <div class="container">
+            <form id ="regform" method = "post">
+
+                    <input name="sentence" size="20pt" placeholder="Enter your sentence...">
+                    <input type="submit" id = "submit_" value = "Send">
+                    {% if final %}
+                        <div>
+                            <p> {{final}} </p>
+                        </div>
+                    {% endif %}
+                </div>
+            </form>
+        </div>
+    </center>
+    </body>
+</html>
