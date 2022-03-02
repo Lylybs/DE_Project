@@ -9,7 +9,7 @@ pipeline {
 
     stage('end') {
       steps {
-        sh 'echo \'done\''
+        sh 'batch echo \'done\''
       }
     }
 
